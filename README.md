@@ -9,7 +9,7 @@ This repository include the binary executables and Python codes for reproducing 
 ## Data Processing
 
 The core part of this work is the data post-processing procedure. After the data registration, where 
-each voxel with the coordinates `X, Y, Z` and features &tau; and T is mapped into its binary label as
+each voxel with the coordinates `X, Y, Z` and thermal features including &tau; and T is mapped into its binary label as
 0 or 1 (healthy or defective), the unfolding process is performed on the dataset. Unfolding means 
 using sliding kernels ***K3, K5, K7*** to include the thermal features of each voxel itself and features 
 of 1st, 2nd and 3rd nearest neighbor voxels around it. Then, Voxels near the top, bottom and side surfaces 
