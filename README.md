@@ -18,7 +18,7 @@ the voxels near the surface and boundary do not participate in the heat transfer
 heat transfer physics comparing to the voxels far from the boundaries. 
 
 ![The following figure show the processes of data post-processing, data unfolding and then 
-training, validation, testing path:](/afs/crc.nd.edu/user/s/smalakpo/ML-LPBF-AM/Process.PNG)
+training, validation, testing path:](https://github.com/sinaDFT/ML-LPBF-AM/blob/1989cb5f1559f6fb86ffd86978b8750f040f8b90/Process.PNG)
 
         
 
