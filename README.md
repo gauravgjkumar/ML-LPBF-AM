@@ -34,7 +34,7 @@ the boundary pixels. This is a small part of an image as most part of the image 
 III. 	Unfolding the labels, features and coordinates in x,y and z directions with different windowing kernels based on the idea 
 of convolutional kernels to take into account the features of the different nearest neighbors around a central point. Through this process, 
 the 3D image will be patched using various kernel sizes. We use kernels with dimension 
-k1 x k1 x k2,{(k1=3, [?k2|k2 ? (1,3)]),(k1=5, [?k2|k2 ? (1,3,5)]),(k1=7, [?k2|k2 ? (1,3,5,7)])}.  
+k1 x k1 x k2,{(k1=3, [k2|k2 \in (1,3)]),(k1=5, [k2|k2 \in (1,3,5)]),(k1=7, [k2|k2 \in (1,3,5,7)])}.  
 
         
 
