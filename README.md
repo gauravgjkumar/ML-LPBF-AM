@@ -21,6 +21,13 @@ data post-processing, data unfolding and then training, validation, testing path
 ![The following figure show the processes of data post-processing, data unfolding and then 
 training, validation, testing path:](https://github.com/sinaDFT/ML-LPBF-AM/blob/1989cb5f1559f6fb86ffd86978b8750f040f8b90/Process.PNG)
 
+### ***Four*** main steps for data post-processing
+
+There are four different steps for the post processing of the raw data to result in clean and proper dataset 
+to be fed into the ML models which are as follow:
+
+I. Indexing the coordinates, features and labels of the points and creating a 3D image where points are converted to grid image pixels 
+
         
 
 
