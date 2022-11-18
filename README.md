@@ -83,7 +83,14 @@ kernel, the label tensor is unfolded as `Y.unfold(0,k1,1).unfold(1,k1,1).unfold(
 $(index, k_1 \times k_1 \times k_2)$. Features are unfolded with the same idea, however, the resulting tensor after reshaping has the size
 $(index, 2 \times k_1 \times k_1 \times k_2)$. In the case of cartesian coordinates, each $C_x, C_y, C_z$ are unfolded using the kernel of 
 the interest and then reshaped into the size $(index, k_1 \times k_1 \times k_2)$. At the end, $C_x, C_y, C_z$ are concatenated to have a 
-coordinates tensor as $C$.          
+coordinates tensor as $C$.
+
+#### IV. *Removing the kernels including -1*
+
+After unfolding is done for each of labels, features and coordinates, it is the time to get rid of the pixel values equal to -1. 
+For all the unfolded tensors, we just keep the indexes that do not include any -1 pixel value. So, through this, automatically, 
+we are removing the kernels that include -1 pixel values. Through the process of removing kernels that include -1 pixel values, 
+the voxels near the surface of the built sample are excluded which have minimum effect in heat transfer in the LPBF.         
 
          
 
