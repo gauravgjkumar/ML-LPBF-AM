@@ -118,6 +118,16 @@ X, Y = Xu[ind].numpy(), Yu[ind, (k[1]*k[1]*k[1])//2].numpy()
 
 **The same process as above can be applied to 3D cartesian coordinates to unfold them.**
 
+## libraries:
+
+This work has used:
+
+* python
+
+* pyTorch
+
+* scikit-learn
+
 
          
 
