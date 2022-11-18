@@ -76,10 +76,10 @@ values `1, 3, 5, 7` based on different combinations. For example, if the images 
 windowing kernel, $k_1$ and $k_2$ are equal to `5` and `3`, respectively and it turns out that this kernel in 2D (xy) for each layer 
 has the size of $5 \times 5$. Consequently, to unfold the label, feature and coordinate tensors (Torch Tensors), we use the unfold module 
 of PyTorch where its arguments are dimension, size and step and this module returns the unfolded (patched) Torch tensor. The unfold module 
-works as `x.unfold(dimension, size, step)` where x is a Torch tensor that we are interested in and we want to unfold it. So, here, dimension 
+works as `x.unfold(dimension, size, step)` where `x` is a Torch tensor that we are interested in and we want to unfold it. So, here, dimension 
 is the unfolding dimension with the slices equal to size and step is the step between slices. So, step is similar to the slide parameter 
 for convolutional kernel and it is the sliding value that the unfolding window scans the image. In the case of the $k_1 \times k_1 \times k_2$
-kernel, the label tensor is unfolded as `$Y$.unfold(0,$k_1$,1)`.     
+kernel, the label tensor is unfolded as `$Y.unfold(0,k_1,1)$`.     
 
          
 
