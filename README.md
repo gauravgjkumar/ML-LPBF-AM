@@ -56,7 +56,32 @@ the conversion of coordinates to indexes as $F(\Delta x, \Delta y, \Delta z, x, 
 respectively, using the $\Delta x, \Delta y, \Delta z$ and the coordinates of each point in 3D Euclidean space as the variables of functions. 
 So, the length of data would be a `numpy` array with dimension $(m,n,k)$.
 
-#### I. *Assigning the data values to indexes*
+#### II. *Assigning the data values to indexes*
+
+From part I., $(m,n,k)$ is calculated. Then, two arrays as $Y$ and $X$ with dimensions $(m,n,k)$ and $(m,n,k,2)$, respectively, 
+are initialized with all their element values equal to -1. The values of labels in the current data are assigned to their indexes as 
+$G_x, G_y, G_z$ in $Y$. The values of features in the current data are assigned to their indexes as $G_x, G_y, G_z$ in $X$. After this, three arrays,
+$C_x, C_y, C_z$, all with dimension $(m,n,k)$ and values -1 are initialized. Values of `x,y,z` coordinates corresponding to each point in the 
+dataset are assigned to $C_x, C_y, C_z$ arrays. So, the arrays of labels, features and coordinates have been created through assigning their 
+related values to their arrays. Dimensions (sizes) of $Y, X, C_x$ are $(26,26,398), (26,26,398,2), (26,26,398)$. In the case of the labels, 
+after indexing and assigning the binary labels, 398 images that include pixels with values `0, 1, -1` are made where each image has the 
+dimension (size) of $26 \times 26$.
+
+#### III. *Unfolding (patching) the images*
+
+In order to consider the features of different nearest neighbor pixels around each pixel in addition to each pixel’s feature, 
+`unfolding` of the image pixels is done in the direction of different dimensions using appropriate windowing kernels of interest. As it 
+was mentioned in the problem definition, dimension (size) of the framing kernel is $k_1 \times k_1 \times k_2$. $k_1$ and $k_2$ get the 
+values `1, 3, 5, 7` based on different combinations. For example, if the images are going to be unfolded using $5 \times 5 \times 3$ 
+windowing kernel, $k_1$ and $k_2$ are equal to `5` and `3`, respectively and it turns out that this kernel in 2D (xy) for each layer 
+has the size of $5 \times 5$. Consequently, to unfold the label, feature and coordinate tensors (Torch Tensors), we use the unfold module 
+of PyTorch where its arguments are dimension, size and step and this module returns the unfolded (patched) Torch tensor. The unfold module 
+works as `x.unfold(dimension, size, step)` where x is a Torch tensor that we are interested in and we want to unfold it. So, here, dimension 
+is the unfolding dimension with the slices equal to size and step is the step between slices. So, step is similar to the slide parameter 
+for convolutional kernel and it is the sliding value that the unfolding window scans the image. In the case of the $k_1 \times k_1 \times k_2$
+kernel, the label tensor is unfolded as `$Y$.unfold(0,$k_1$,1)`.     
+
+         
 
  
 
