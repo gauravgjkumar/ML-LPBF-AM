@@ -129,6 +129,27 @@ This work has used:
 * scipy
 * pandas
 
+### MLP
+
+Details of the MLP architecture used in this work could be found in our paper's Supporting Information (SI). The SI for this work is
+very rich and informative.
+
+## Citation
+
+Find this useful or like this work? Cite us with:
+
+```
+  {
+  title = {Predicting defects in laser powder bed fusion using in-situ thermal imaging data and machine learning},
+  journal = {Journal of Additive Manufacturing},
+  volume = {58},
+  page = {103008},
+  year = {2022},
+  doi = {10.1016/j.addma.2022.103008},
+  url = {https://www.sciencedirect.com/science/article/abs/pii/S2214860422004018},
+  authors = {Sina Malakpour Estalaki, Cody S. Lough, Robert G. Landers, Edward C. Kinzel, Tengfei Luo}
+}
+```
 
 
          
