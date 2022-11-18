@@ -122,11 +122,13 @@ X, Y = Xu[ind].numpy(), Yu[ind, (k[1]*k[1]*k[1])//2].numpy()
 
 This work has used:
 
-* python
-
+* imbalanced-learn
 * pyTorch
-
 * scikit-learn
+* numpy
+* scipy
+* pandas
+
 
 
          
