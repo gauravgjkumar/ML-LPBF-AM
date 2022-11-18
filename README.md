@@ -80,7 +80,10 @@ works as `x.unfold(dimension, size, step)` where `x` is a Torch tensor that we a
 is the unfolding dimension with the slices equal to size and step is the step between slices. So, step is similar to the slide parameter 
 for convolutional kernel and it is the sliding value that the unfolding window scans the image. In the case of the $k_1 \times k_1 \times k_2$
 kernel, the label tensor is unfolded as `Y.unfold(0,k1,1).unfold(1,k1,1).unfold(2,k2,1)` and then reshaped into the size 
-$(index, k_1 \times k_1 \times k_2)$.     
+$(index, k_1 \times k_1 \times k_2)$. Features are unfolded with the same idea, however, the resulting tensor after reshaping has the size
+$(index, 2 \times k_1 \times k_1 \times k_2)$. In the case of cartesian coordinates, each $C_x, C_y, C_z$ are unfolded using the kernel of 
+the interest and then reshaped into the size $(index, k_1 \times k_1 \times k_2)$. At the end, $C_x, C_y, C_z$ are concatenated to have a 
+coordinates tensor as $C$.          
 
          
 
