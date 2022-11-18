@@ -79,7 +79,8 @@ of PyTorch where its arguments are dimension, size and step and this module retu
 works as `x.unfold(dimension, size, step)` where `x` is a Torch tensor that we are interested in and we want to unfold it. So, here, dimension 
 is the unfolding dimension with the slices equal to size and step is the step between slices. So, step is similar to the slide parameter 
 for convolutional kernel and it is the sliding value that the unfolding window scans the image. In the case of the $k_1 \times k_1 \times k_2$
-kernel, the label tensor is unfolded as `$Y.unfold(0,k_1,1)$`.     
+kernel, the label tensor is unfolded as `Y.unfold(0,k1,1).unfold(1,k1,1).unfold(2,k2,1)` and then reshaped into the size 
+$(index, k_1 \times k_1 \times k_2)$.     
 
          
 
